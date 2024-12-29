@@ -1,0 +1,584 @@
+{
+    "sc": {
+        "name": "Simple Cubic (SC)",
+        "table": [
+            {
+                "th": {
+                    "type": "text",
+                    "value": "Coordination Number"
+                },
+                "td": {
+                    "type": "text",
+                    "value": "6"
+                }
+            },
+            {
+                "th": {
+                    "type": "equation",
+                    "value": "r.html"
+                },
+                "td": {
+                    "type": "equation",
+                    "value": "r-sc-hcp.html"
+                }
+            },
+            {
+                "th": {
+                    "type": "text",
+                    "value": "Atoms per Unit Cell"
+                },
+                "td": {
+                    "type": "text",
+                    "value": 1
+                }
+            },
+            {
+                "th": {
+                    "type": "text",
+                    "value": "Packing Density/Factor"
+                },
+                "td": {
+                    "type": "equation",
+                    "value": "d-sc.html"
+                }
+            }
+        ],
+        "maxRadius": 0.5,
+        "view": {
+            "default": {
+                "config": [
+                    {
+                        "type": "toggle",
+                        "name": "expand_radius",
+                        "label": "Expand Radius",
+                        "value": false
+                    },
+                    {
+                        "type": "toggle",
+                        "name": "edge",
+                        "label": "Edge",
+                        "value": true
+                    },
+                    {
+                        "type": "toggle",
+                        "name": "sphere_segments",
+                        "label": "Sphere Segments",
+                        "value": true
+                    },
+                    {
+                        "type": "reset-button",
+                        "label": "Reset Camera Position"
+                    }
+                ],
+                "label": "Default View",
+                "structure": "sc"
+            },
+            "cn": {
+                "config": [
+                    {
+                        "type": "toggle",
+                        "name": "edge",
+                        "label": "Edge",
+                        "value": true
+                    },
+                    {
+                        "type": "reset-button",
+                        "label": "Reset Camera Position"
+                    }
+                ],
+                "label": "Coordination Number View",
+                "structure": "sc-cn"
+            }
+        }
+    },
+    "bcc": {
+        "name": "Body-centered Cubic (BCC)",
+        "table": [
+            {
+                "th": {
+                    "type": "text",
+                    "value": "Coordination Number"
+                },
+                "td": {
+                    "type": "text",
+                    "value": 8
+                }
+            },
+            {
+                "th": {
+                    "type": "equation",
+                    "value": "r.html"
+                },
+                "td": {
+                    "type": "equation",
+                    "value": "r-bcc.html"
+                }
+            },
+            {
+                "th": {
+                    "type": "text",
+                    "value": "Atoms per Unit Cell"
+                },
+                "td": {
+                    "type": "text",
+                    "value": 2
+                }
+            },
+            {
+                "th": {
+                    "type": "text",
+                    "value": "Packing Density/Factor"
+                },
+                "td": {
+                    "type": "equation",
+                    "value": "d-bcc.html"
+                }
+            }
+        ],
+        "maxRadius": 0.43301,
+        "view": {
+            "default": {
+                "config": [
+                    {
+                        "type": "toggle",
+                        "name": "expand_radius",
+                        "label": "Expand Radius",
+                        "value": false
+                    },
+                    {
+                        "type": "toggle",
+                        "name": "edge",
+                        "label": "Edge",
+                        "value": true
+                    },
+                    {
+                        "type": "toggle",
+                        "name": "inner_connections",
+                        "label": "Inner Connections",
+                        "value": true
+                    },
+                    {
+                        "type": "toggle",
+                        "name": "sphere_segments",
+                        "label": "Sphere Segments",
+                        "value": true
+                    },
+                    {
+                        "type": "reset-button",
+                        "label": "Reset Camera Position"
+                    }
+                ],
+                "label": "Default View",
+                "structure": "bcc"
+            },
+            "cn": {
+                "config": [
+                    {
+                        "type": "toggle",
+                        "name": "edge",
+                        "label": "Edge",
+                        "value": true
+                    },
+                    {
+                        "type": "reset-button",
+                        "label": "Reset Camera Position"
+                    }
+                ],
+                "label": "Coordination Number View",
+                "structure": "bcc-cn"
+            }
+        }
+    },
+    "fcc": {
+        "name": "Face-centered Cubic (FCC)",
+        "table": [
+            {
+                "th": {
+                    "type": "text",
+                    "value": "Coordination Number"
+                },
+                "td": {
+                    "type": "text",
+                    "value": 12
+                }
+            },
+            {
+                "th": {
+                    "type": "equation",
+                    "value": "r.html"
+                },
+                "td": {
+                    "type": "equation",
+                    "value": "r-fcc.html"
+                }
+            },
+            {
+                "th": {
+                    "type": "text",
+                    "value": "Atoms per Unit Cell"
+                },
+                "td": {
+                    "type": "text",
+                    "value": 4
+                }
+            },
+            {
+                "th": {
+                    "type": "text",
+                    "value": "Packing Density/Factor"
+                },
+                "td": {
+                    "type": "equation",
+                    "value": "d-fcc-hcp.html"
+                }
+            }
+        ],
+        "maxRadius": 0.35355,
+        "view": {
+            "default": {
+                "config": [
+                    {
+                        "type": "toggle",
+                        "name": "expand_radius",
+                        "label": "Expand Radius",
+                        "value": false
+                    },
+                    {
+                        "type": "toggle",
+                        "name": "edge",
+                        "label": "Edge",
+                        "value": true
+                    },
+                    {
+                        "type": "toggle",
+                        "name": "inner_connections",
+                        "label": "Inner Connections",
+                        "value": true
+                    },
+                    {
+                        "type": "toggle",
+                        "name": "face_connections",
+                        "label": "Face Connections",
+                        "value": false
+                    },
+                    {
+                        "type": "toggle",
+                        "name": "sphere_segments",
+                        "label": "Sphere Segments",
+                        "value": true
+                    },
+                    {
+                        "type": "reset-button",
+                        "label": "Reset Camera Position"
+                    }
+                ],
+                "label": "Default View",
+                "structure": "fcc"
+            },
+            "cn": {
+                "config": [
+                    {
+                        "type": "toggle",
+                        "name": "edge",
+                        "label": "Edge",
+                        "value": true
+                    },
+                    {
+                        "type": "toggle",
+                        "name": "face_connections",
+                        "label": "Face Connections",
+                        "value": false
+                    },
+                    {
+                        "type": "reset-button",
+                        "label": "Reset Camera Position"
+                    }
+                ],
+                "label": "Coordination Number View",
+                "structure": "fcc-cn"
+            }
+        }
+    },
+    "dc": {
+        "name": "Diamond cubic (DC)",
+        "table": [
+            {
+                "th": {
+                    "type": "text",
+                    "value": "Coordination Number"
+                },
+                "td": {
+                    "type": "text",
+                    "value": 4
+                }
+            },
+            {
+                "th": {
+                    "type": "equation",
+                    "value": "r.html"
+                },
+                "td": {
+                    "type": "equation",
+                    "value": "r-dc.html"
+                }
+            },
+            {
+                "th": {
+                    "type": "text",
+                    "value": "Atoms per Unit Cell"
+                },
+                "td": {
+                    "type": "text",
+                    "value": 8
+                }
+            },
+            {
+                "th": {
+                    "type": "text",
+                    "value": "Packing Density/Factor"
+                },
+                "td": {
+                    "type": "equation",
+                    "value": "d-dc.html"
+                }
+            }
+        ],
+        "maxRadius": 0.216506,
+        "view": {
+            "default": {
+                "config": [
+                    {
+                        "type": "toggle",
+                        "name": "expand_radius",
+                        "label": "Expand Radius",
+                        "value": false
+                    },
+                    {
+                        "type": "toggle",
+                        "name": "edge",
+                        "label": "Edge",
+                        "value": true
+                    },
+                    {
+                        "type": "toggle",
+                        "name": "inner_connections",
+                        "label": "Inner Connections",
+                        "value": true
+                    },
+                    {
+                        "type": "toggle",
+                        "name": "face_connections",
+                        "label": "Face Connections",
+                        "value": false
+                    },
+                    {
+                        "type": "toggle",
+                        "name": "sphere_segments",
+                        "label": "Sphere Segments",
+                        "value": true
+                    },
+                    {
+                        "type": "reset-button",
+                        "label": "Reset Camera Position"
+                    }
+                ],
+                "label": "Default View",
+                "structure": "dc"
+            },
+            "cn": {
+                "config": [
+                    {
+                        "type": "toggle",
+                        "name": "edge",
+                        "label": "Edge",
+                        "value": true
+                    },
+                    {
+                        "type": "toggle",
+                        "name": "inner_connections",
+                        "label": "Inner Connections",
+                        "value": true
+                    },
+                    {
+                        "type": "toggle",
+                        "name": "face_connections",
+                        "label": "Face Connections",
+                        "value": false
+                    },
+                    {
+                        "type": "reset-button",
+                        "label": "Reset Camera Position"
+                    }
+                ],
+                "label": "Coordination Number View",
+                "structure": "dc-cn"
+            }
+        }
+    },
+    "hcp": {
+        "name": "Hexagonal Close Packed (HCP)",
+        "table": [
+            {
+                "th": {
+                    "type": "text",
+                    "value": "Coordination Number"
+                },
+                "td": {
+                    "type": "text",
+                    "value": 12
+                }
+            },
+            {
+                "th": {
+                    "type": "equation",
+                    "value": "r.html"
+                },
+                "td": {
+                    "type": "equation",
+                    "value": "r-sc-hcp.html"
+                }
+            },
+            {
+                "th": {
+                    "type": "text",
+                    "value": "Atoms per Unit Cell"
+                },
+                "td": {
+                    "type": "text",
+                    "value": 6
+                }
+            },
+            {
+                "th": {
+                    "type": "text",
+                    "value": "Packing Density/Factor"
+                },
+                "td": {
+                    "type": "equation",
+                    "value": "d-fcc-hcp.html"
+                }
+            }
+        ],
+        "maxRadius": 0.5,
+        "view": {
+            "default": {
+                "config": [
+                    {
+                        "type": "toggle",
+                        "name": "expand_radius",
+                        "label": "Expand Radius",
+                        "value": false
+                    },
+                    {
+                        "type": "toggle",
+                        "name": "edge",
+                        "label": "Edge",
+                        "value": true
+                    },
+                    {
+                        "type": "toggle",
+                        "name": "inner_connections",
+                        "label": "Inner Connections",
+                        "value": true
+                    },
+                    {
+                        "type": "toggle",
+                        "name": "face_connections",
+                        "label": "Face Connections",
+                        "value": false
+                    },
+                    {
+                        "type": "toggle",
+                        "name": "sphere_segments",
+                        "label": "Sphere Segments",
+                        "value": true
+                    },
+                    {
+                        "type": "reset-button",
+                        "label": "Reset Camera Position"
+                    }
+                ],
+                "label": "Default View",
+                "structure": "hcp"
+            },
+            "cn": {
+                "config": [
+                    {
+                        "type": "toggle",
+                        "name": "edge",
+                        "label": "Edge",
+                        "value": true
+                    },
+                    {
+                        "type": "toggle",
+                        "name": "inner_connections",
+                        "label": "Inner Connections",
+                        "value": true
+                    },
+                    {
+                        "type": "toggle",
+                        "name": "face_connections",
+                        "label": "Face Connections",
+                        "value": false
+                    },
+                    {
+                        "type": "reset-button",
+                        "label": "Reset Camera Position"
+                    }
+                ],
+                "label": "Coordination Number View",
+                "structure": "hcp-cn"
+            }
+        }
+    },
+    "nacl": {
+        "name": "NaCl",
+        "table": [
+            {
+                "th": {
+                    "type": "text",
+                    "value": "Atoms per Unit Cell"
+                },
+                "td": {
+                    "type": "equation",
+                    "value": "n-na-cl.html"
+                }
+            },
+            {
+                "th": {
+                    "type": "text",
+                    "value": "Note"
+                },
+                "td": {
+                    "type": "equation",
+                    "value": "r-na-cl.html"
+                }
+            }
+        ],
+        "maxRadius": 0.2,
+        "view": {
+            "default": {
+                "config": [
+                    {
+                        "type": "toggle",
+                        "name": "edge",
+                        "label": "Edge",
+                        "value": true
+                    },
+                    {
+                        "type": "toggle",
+                        "name": "sphere_segments",
+                        "label": "Sphere Segments",
+                        "value": true
+                    },
+                    {
+                        "type": "reset-button",
+                        "label": "Reset Camera Position"
+                    }
+                ],
+                "label": "Default View",
+                "structure": "nacl"
+            }
+        }
+    }
+}

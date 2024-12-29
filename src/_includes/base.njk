@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <script>
+        {% include "partials/x3dom.js" %}
+    </script>
+    <style>
+        {% include "partials/x3dom.css" %}
+    </style>
+    <style>
+        {% include "assets/css/style.css" %}
+    </style>
+
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ des }}" />
+</head>
+<body class="text-gray-200 bg-gray-900">
+
+    <main class="max-w-7xl mx-auto px-3">
+
+        <div class="flex items-center justify-between pt-5 pb-3">
+            <div>
+                <a href="/">
+                    <h1 class="text-3xl">
+                        3DEE Crystals
+                    </h1>
+                </a>
+                <h2 class="text-md">3D Visualization of Common Crystal Structures used in Electrical Engineering</h2>
+            </div>
+            <div>
+                <a href="{{ github }}" class="hover:text-gray-300" target="_blank">
+                    {% include "icons/github.njk" %}
+                </a>
+            </div>
+        </div>
+
+        {% include "partials/nav.njk" %}
+
+        {% block content %}
+            {{ content | safe }}
+        {% endblock %}
+
+    </main>
+
+    <script>
+        {% include "partials/script.js" %}
+    </script>
+</body>
+</html>

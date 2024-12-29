@@ -1,0 +1,234 @@
+{# Private: #}
+{% macro sphere(position, radius, color, hidden) %}
+    {% if hidden === false %}
+        <transform translation="{{ position }}" scale="{{ radius }} {{ radius }} {{ radius }}" class="sphere">
+    {% else %}
+        <transform translation="{{ position }}" scale="{{ radius }} {{ radius }} {{ radius }}" render="false" visible="false" class="sphere full">
+    {% endif %}
+        <shape>
+            <sphere radius="1"></sphere>
+            <appearance>
+                <material diffusecolor="{{ color }}"></material>
+            </appearance>
+        </shape>
+    </transform>
+{% endmacro %}
+
+{% macro indexFaceSet(coordIndex, points, id, creaseAngle) %}
+    <transform render="false" visible="false">
+        <shape>
+            <indexedfaceset def="{{ id }}" solid="false" creaseangle="{{ creaseAngle }}" coordindex="{{ coordIndex }}">
+                <coordinate point="{{ points }}"></coordinate>
+            </indexedfaceset>
+        </shape>
+    </transform>
+{% endmacro %}
+
+{% macro halfHidden() %}
+    {% set uv = genUvSphereSegment(1, 24, 24, 1/2, 2) %}
+    {{ indexFaceSet(uv.coordIndex, uv.points, 'half-1', 3.14) }}
+
+    {% set cap = genCapForSphereSegment(uv.capc, 'first') %}
+    {{ indexFaceSet(cap.coordIndex, cap.points, 'half-2', 0) }}
+{% endmacro %}
+
+{% macro quarterHidden() %}
+    {% set uv = genUvSphereSegment(1, 24, 24, 1/2, 1) %}
+    {{ indexFaceSet(uv.coordIndex, uv.points, 'quarter-1', 3.14) }}
+
+    {% set cap = genCapForSphereSegment(uv.capc, 'all') %}
+    {{ indexFaceSet(cap.coordIndex, cap.points, 'quarter-2', 0) }}
+{% endmacro %}
+
+{% macro octantHidden() %}
+    {% set uv = genUvSphereSegment(1, 24, 24, 1/2, 1/2) %}
+    {{ indexFaceSet(uv.coordIndex, uv.points, 'octant-1', 3.14) }}
+
+    {% set cap = genCapForSphereSegment(uv.capc, 'all') %}
+    {{ indexFaceSet(cap.coordIndex, cap.points, 'octant-2', 0) }}
+{% endmacro %}
+
+{% macro hexHidden() %}
+    {% set uv = genUvSphereSegment(1, 24, 24, 1/2, 2/3) %}
+    {{ indexFaceSet(uv.coordIndex, uv.points, 'hex-1', 3.14) }}
+
+    {% set cap = genCapForSphereSegment(uv.capc, 'all') %}
+    {{ indexFaceSet(cap.coordIndex, cap.points, 'hex-2', 0) }}
+{% endmacro %}
+
+{% macro segment(radius, position, color, rotation, type) %}
+    <transform translation="{{ position }}" scale="{{ radius }} {{ radius }} {{ radius }}" class="segment">
+
+    {% if rotation.z !== 0 %}
+        <transform rotation="0 0 1 {{ rotation.z }}">
+    {% endif %}
+    {% if rotation.y !== 0 %}
+        <transform rotation="0 1 0 {{ rotation.y }}">
+    {% endif %}
+    {% if rotation.x !== 0 %}
+        <transform rotation="1 0 0 {{ rotation.x }}">
+    {% endif %}
+
+    <shape>
+        <indexedfaceset use="{{ type }}-1"></indexedfaceset>
+        <appearance>
+            <material diffusecolor="{{ color }}"></material>
+        </appearance>
+    </shape>
+    <shape>
+        <indexedfaceset use="{{ type }}-2"></indexedfaceset>
+        <appearance>
+            <material diffusecolor="{{ color }}"></material>
+        </appearance>
+    </shape>
+
+   {% if rotation.z !== 0 %}
+        </transform>
+    {% endif %}
+    {% if rotation.y !== 0 %}
+        </transform>
+    {% endif %}
+    {% if rotation.x !== 0 %}
+        </transform>
+    {% endif %}
+
+    </transform>
+{% endmacro %}
+
+{% macro line(aPosition, bPosition, connectionRadius, color, type, hidden) %}
+
+    {% set r = calculateLine(aPosition, bPosition, connectionRadius, color, type) %}
+
+        {% if type !== 'face-hidden' %}
+            <transform translation="{{ aPosition }}" class="{{ type }}">
+        {% else %}
+            <transform translation="{{ aPosition }}" class="{{ type }}" render="false" visible="false">
+        {% endif %}
+        <transform rotation="0 1 0 {{ r.ry }}">
+            <transform rotation="1 0 0 {{ r.rx }}">
+                <transform translation="0 {{ r.tyf }} 0">
+                    <shape>
+                        <appearance>
+                            <material diffusecolor="{{ r.color }}"></material>
+                        </appearance>
+                        {% if type === 'edge' or type === 'face' or type === 'face-hidden' %}
+                            <box size="{{ r.cr }} {{ r.ch }} {{ r.cr }}"></box>
+                        {% elif type === 'inner' or type === 'cn' %}
+                            <cylinder height="{{ r.ch }}" radius="{{ r.cr }}"></cylinder>
+                        {% endif %}
+                    </shape>
+                </transform>
+            </transform>
+        </transform>
+    </transform>
+{% endmacro %}
+
+{# Private #}
+{% macro configToggle(config) %}
+    <div>
+        <label class="inline-flex items-center cursor-pointer">
+            <input type="checkbox" name="{{ config.name }}" class="sr-only peer toggle" autocomplete="off" {{ 'checked' if config.value else '' }}>
+            <div
+                class="relative w-11 h-6 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-800 rounded-full peer bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-blue-600">
+            </div>
+            <span class="ms-3 text-sm font-medium text-gray-300">{{ config.label }}</span>
+        </label>
+    </div>
+{% endmacro %}
+
+{# Private #}
+{% macro configResetButton(config) %}
+    <div>
+        <button type="button" class="px-3 py-2 flex items-center justify-center text-sm cursor-pointer text-gray-400 peer-checked:bg-gray-700 peer-checked:text-white hover:bg-gray-600 border border-gray-600 rounded-lg hover:text-white {{ config.type }}">
+            {{ config.label }}
+        </button>
+    </div>
+{% endmacro %}
+
+{# Public #}
+{% macro navigationView(tab, obj) %}
+    <div class="flex flex-wrap gap-2">
+        {% for key, v in obj.view %}
+            <label>
+                <input type="radio" class="sr-only peer view" name="{{ tab }}" value="{{ v.structure }}" autocomplete="off" {{ 'checked' if loop.index === 1 else '' }}>
+                <div
+                    class="px-3 py-2 flex items-center justify-center text-sm cursor-pointer text-gray-400 peer-checked:bg-gray-700 peer-checked:text-white hover:bg-gray-600 border border-gray-600 rounded-lg hover:text-white">
+                    {{ v.label }}
+                </div>
+            </label>
+        {% endfor %}
+    </div>
+{% endmacro %}
+
+{# Public: #}
+{% macro allSegments() %}
+    {{ halfHidden() }}
+    {{ quarterHidden() }}
+    {{ octantHidden() }}
+    {{ hexHidden() }}
+{% endmacro %}
+
+{% macro xdom(structure, json) %}
+    <transform id="{{ json }}" render="false" visible="false" data-center-of-rotation-const="{{ structure.settings.centerOfRotation }}" data-camera-orientation-const="{{ structure.settings.cameraOrientation }}" data-camera-position-const="{{ structure.settings.cameraPosition }}" data-camera-orientation="{{ structure.settings.cameraOrientation }}" data-camera-position="{{ structure.settings.cameraPosition }}">
+        {% for k, atom in structure.atoms %}
+            {% if atom.type === 'sphere' %}
+                {{ sphere(atom.position, atom.radius, atom.color, false) }}
+            {% else %}
+                {% if atom.type === 'half' %}
+                    {{ segment(atom.radius, atom.position, atom.color, atom.rotation, 'half') }}
+                {% elif atom.type === 'quarter' %}
+                    {{ segment(atom.radius, atom.position, atom.color, atom.rotation, 'quarter') }}
+                {% elif atom.type === 'octant' %}
+                    {{ segment(atom.radius, atom.position, atom.color, atom.rotation, 'octant') }}
+                {% elif atom.type === 'hex' %}
+                    {{ segment(atom.radius, atom.position, atom.color, atom.rotation, 'hex') }}
+                {% endif %}
+
+                {# Hidden Spheres for Toggle #}
+                {{ sphere(atom.position, atom.radius, atom.color, true) }}
+            {% endif %}
+        {% endfor %}
+
+        {% for a, b, type in structure.connections %}
+            {{ line(structure.atoms[a].position, structure.atoms[b].position, structure.settings.connectionRadius, structure.settings.connectionColor, type) }}
+        {% endfor %}
+    </transform>
+{% endmacro %}
+
+{% macro crystalTable(tab) %}
+    <div class="crystal-table">
+        <table>
+            <tbody>
+                {% for row in tab.table %}
+                    <tr>
+                        {% for dom, column in row %}
+                            {% if column.type === 'text' %}
+                                <{{ dom }}>{{ column.value }}</{{ dom }}>
+                            {% elif column.type === 'equation' %}
+                                <{{ dom }}>{% include "partials/equations/" + column.value %}</{{ dom }}>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endmacro %}
+
+{% macro config(tab, obj) %}
+    <div class="flex flex-col gap-5 config">
+        {% for key, v in obj.view %}
+            <div class="hidden" data-config="{{ v.structure }}">
+                <div class="flex flex-col gap-5">
+                    {% for config in v.config %}
+                        {% if config.type === 'toggle' %}
+                            {{ configToggle(config) }}
+                        {% elif config.type === 'reset-button' %}
+                            {{ configResetButton(config) }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endmacro %}

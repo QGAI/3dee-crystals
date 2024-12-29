@@ -1,0 +1,49 @@
+{% extends "base.njk" %}
+
+{% import "partials/functions.njk" as fn %}
+
+{% block content %}
+    <div class="bg-gray-900">
+        <div>
+            {% for tab, obj in tabs %}
+                <div class="my-5 hidden" data-nav-view="{{ tab }}">
+                    {{ fn.navigationView(tab, obj) }}
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-5">
+            {# Scene #}
+            <div class="grow border border-gray-300">
+                <x3d height="600px">
+                    <scene>
+                        <viewpoint></viewpoint>
+
+                        {{ fn.allSegments() }}
+
+                        {% for tab, obj in tabs %}
+                            {% for key, v in obj.view %}
+                                {{ fn.xdom(structures[v.structure], v.structure) }}
+                            {% endfor %}
+                        {% endfor %}
+                    </scene>
+                </x3d>
+            </div>
+            {# Aside #}
+            <div class="">
+                <div class="flex gap-5">
+                    {% for tab, obj in tabs %}
+                        <div class="hidden" data-aside="{{ tab }}" data-max-radius="{{ obj.maxRadius }}">
+                            <div class="flex flex-wrap flex-row md:flex-col gap-5">
+                                {{ fn.crystalTable(obj) }}
+
+                                {{ fn.config(tab, obj) }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

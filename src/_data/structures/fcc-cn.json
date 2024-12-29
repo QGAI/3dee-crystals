@@ -1,0 +1,217 @@
+{
+    "settings": {
+        "centerOfRotation": [0.5, 1, 0.5],
+        "cameraOrientation": [0, 1, 0, 0.5],
+        "cameraPosition": [2.37, 1, 4],
+        "connectionRadius": 0.008,
+        "connectionColor": [0.6, 0.6, 0.6]
+    },
+    "atoms": {
+           "V0": {
+                "type": "sphere",
+                "position": [0.0, 0.0, 1.0],
+                "color": [0.0, 0.0, 1.0],
+                "radius": 0.15
+            },
+            "V1": {
+                "type": "sphere",
+                "position": [1.0, 0.0, 1.0],
+                "color": [0.0, 0.0, 1.0],
+                "radius": 0.15
+            },
+            "V2": {
+                "type": "sphere",
+                "position": [1.0, 0.0, 0.0],
+                "color": [0.0, 0.0, 1.0],
+                "radius": 0.15
+            },
+            "V3": {
+                "type": "sphere",
+                "position": [0.0, 0.0, 0.0],
+                "color": [0.0, 0.0, 1.0],
+                "radius": 0.15
+            },
+            "V4": {
+                "type": "sphere",
+                "position": [0.0, 1.0, 1.0],
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.15
+            },
+            "V5": {
+                "type": "sphere",
+                "position": [1.0, 1.0, 1.0],
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.15
+            },
+            "V6": {
+                "type": "sphere",
+                "position": [1.0, 1.0, 0.0],
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.15
+            },
+            "V7": {
+                "type": "sphere",
+                "position": [0.0, 1.0, 0.0],
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.15
+            },
+
+            "F0": {
+                "type": "sphere",
+                "position": [0.5, 0.5, 0.0],
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.15
+            },
+            "F1": {
+                "type": "sphere",
+                "position": [1.0, 0.5, 0.5],
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.15
+            },
+            "F2": {
+                "type": "sphere",
+                "position": [0.5, 0.5, 1.0],
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.15
+            },
+            "F3": {
+                "type": "sphere",
+                "position": [0.0, 0.5, 0.5],
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.15
+            },
+            "F4": {
+                "type": "sphere",
+                "position": [0.5, 0.0, 0.5],
+                "color": [1.0, 1.0, 0.0],
+                "radius": 0.15
+            },
+            "F5": {
+                "type": "sphere",
+                "position": [0.5, 1.0, 0.5],
+                "color": [0.1, 0.1, 0.1],
+                "radius": 0.05
+            },
+
+
+            "V8": {
+                "type": "sphere",
+                "position": [0.0, 2.0, 1.0],
+                "color": [0.0, 0.0, 1.0],
+                "radius": 0.15
+            },
+            "V9": {
+                "type": "sphere",
+                "position": [1.0, 2.0, 1.0],
+                "color": [0.0, 0.0, 1.0],
+                "radius": 0.15
+            },
+            "V10": {
+                "type": "sphere",
+                "position": [1.0, 2.0, 0.0],
+                "color": [0.0, 0.0, 1.0],
+                "radius": 0.15
+            },
+            "V11": {
+                "type": "sphere",
+                "position": [0.0, 2.0, 0.0],
+                "color": [0.0, 0.0, 1.0],
+                "radius": 0.15
+            },
+
+            "F6": {
+                "type": "sphere",
+                "position": [0.5, 1.5, 0.0],
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.15
+            },
+            "F7": {
+                "type": "sphere",
+                "position": [1.0, 1.5, 0.5],
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.15
+            },
+            "F8": {
+                "type": "sphere",
+                "position": [0.5, 1.5, 1.0],
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.15
+            },
+            "F9": {
+                "type": "sphere",
+                "position": [0.0, 1.5, 0.5],
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.15
+            },
+            "F10": {
+                "type": "sphere",
+                "position": [0.5, 2.0, 0.5],
+                "color": [1.0, 1.0, 0.0],
+                "radius": 0.15
+            }
+        },
+    "connections": [
+        ["V0", "V1", "edge"],
+        ["V1", "V2", "edge"],
+        ["V2", "V3", "edge"],
+        ["V3", "V0", "edge"],
+
+        ["V4", "V5", "edge"],
+        ["V5", "V6", "edge"],
+        ["V6", "V7", "edge"],
+        ["V7", "V4", "edge"],
+
+        ["V0", "V4", "edge"],
+        ["V1", "V5", "edge"],
+        ["V2", "V6", "edge"],
+        ["V3", "V7", "edge"],
+
+
+        ["V0", "V2", "face-hidden"],
+        ["V1", "V3", "face-hidden"],
+
+        ["V0", "V5", "face-hidden"],
+        ["V0", "V7", "face-hidden"],
+        ["V1", "V4", "face-hidden"],
+        ["V1", "V6", "face-hidden"],
+        ["V2", "V5", "face-hidden"],
+        ["V2", "V7", "face-hidden"],
+        ["V3", "V4", "face-hidden"],
+        ["V3", "V6", "face-hidden"],
+
+        ["V4", "V9", "face-hidden"],
+        ["V4", "V11", "face-hidden"],
+        ["V5", "V8", "face-hidden"],
+        ["V5", "V10", "face-hidden"],
+        ["V6", "V9", "face-hidden"],
+        ["V6", "V11", "face-hidden"],
+        ["V7", "V8", "face-hidden"],
+        ["V7", "V10", "face-hidden"],
+
+        ["V8", "V10", "face-hidden"],
+        ["V9", "V11", "face-hidden"],
+
+        ["V8", "V9", "edge"],
+        ["V9", "V10", "edge"],
+        ["V10", "V11", "edge"],
+        ["V11", "V8", "edge"],
+
+        ["V4", "V8", "edge"],
+        ["V5", "V9", "edge"],
+        ["V6", "V10", "edge"],
+        ["V7", "V11", "edge"],
+
+        ["F5", "V4", "cn"],
+        ["F5", "V5", "cn"],
+        ["F5", "V6", "cn"],
+        ["F5", "V7", "cn"],
+        ["F5", "F0", "cn"],
+        ["F5", "F1", "cn"],
+        ["F5", "F2", "cn"],
+        ["F5", "F3", "cn"],
+        ["F5", "F6", "cn"],
+        ["F5", "F7", "cn"],
+        ["F5", "F8", "cn"],
+        ["F5", "F9", "cn"]
+    ]
+}

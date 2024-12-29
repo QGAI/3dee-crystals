@@ -1,0 +1,91 @@
+{
+    "settings": {
+        "centerOfRotation": [0.5, 0.5, 0.5],
+        "cameraOrientation": [0, 1, 0, 0.5],
+        "cameraPosition": [1.81, 0.5, 3],
+        "connectionRadius": 0.008,
+        "connectionColor": [0.6, 0.6, 0.6]
+    },
+    "atoms": {
+           "V0": {
+                "type": "sphere",
+                "position": [0.0, 0.0, 1.0],
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.15
+            },
+            "V1": {
+                "type": "sphere",
+                "position": [1.0, 0.0, 1.0],
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.15
+            },
+            "V2": {
+                "type": "sphere",
+                "position": [1.0, 0.0, 0.0],
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.15
+            },
+            "V3": {
+                "type": "sphere",
+                "position": [0.0, 0.0, 0.0],
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.15
+            },
+            "V4": {
+                "type": "sphere",
+                "position": [0.0, 1.0, 1.0],
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.15
+            },
+            "V5": {
+                "type": "sphere",
+                "position": [1.0, 1.0, 1.0],
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.15
+            },
+            "V6": {
+                "type": "sphere",
+                "position": [1.0, 1.0, 0.0],
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.15
+            },
+            "V7": {
+                "type": "sphere",
+                "position": [0.0, 1.0, 0.0],
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.15
+            },
+            "I0": {
+                "type": "sphere",
+                "position": [0.5, 0.5, 0.5],
+                "color": [0.1, 0.1, 0.1],
+                "radius": 0.05
+            }
+        },
+    "connections": [
+        ["V0", "V1", "edge"],
+		["V1", "V2", "edge"],
+		["V2", "V3", "edge"],
+		["V3", "V0", "edge"],
+
+		["V4", "V5", "edge"],
+		["V5", "V6", "edge"],
+		["V6", "V7", "edge"],
+		["V7", "V4", "edge"],
+
+		["V0", "V4", "edge"],
+		["V1", "V5", "edge"],
+		["V2", "V6", "edge"],
+		["V3", "V7", "edge"],
+
+        ["I0", "V0", "cn"],
+        ["I0", "V1", "cn"],
+        ["I0", "V2", "cn"],
+        ["I0", "V3", "cn"],
+        ["I0", "V4", "cn"],
+        ["I0", "V5", "cn"],
+        ["I0", "V6", "cn"],
+        ["I0", "V7", "cn"]
+
+    ]
+}

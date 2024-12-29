@@ -1,0 +1,201 @@
+{
+    "settings": {
+        "centerOfRotation": [0.5, 0.5, 0.5],
+        "cameraOrientation": [0, 1, 0, 0.5],
+        "cameraPosition": [1.81, 0.5, 3],
+        "connectionRadius": 0.008,
+        "connectionColor": [0.6, 0.6, 0.6]
+    },
+    "atoms": {
+           "V0": {
+                "type": "octant",
+                "position": [0.0, 0.0, 1.0],
+                "rotation": {
+                    "x": 0,
+                    "y": 1.57079,
+                    "z": 0
+                },
+                "color": [0.0, 0.0, 1.0],
+                "radius": 0.15
+            },
+            "V1": {
+                "type": "octant",
+                "position": [1.0, 0.0, 1.0],
+                "rotation": {
+                    "x": 0,
+                    "y": 3.14159,
+                    "z": 0
+                },
+                "color": [0.0, 0.0, 1.0],
+                "radius": 0.15
+            },
+            "V2": {
+                "type": "octant",
+                "position": [1.0, 0.0, 0.0],
+                "rotation": {
+                    "x": 0,
+                    "y": -1.57079,
+                    "z": 0
+                },
+                "color": [0.0, 0.0, 1.0],
+                "radius": 0.15
+            },
+            "V3": {
+                "type": "octant",
+                "position": [0.0, 0.0, 0.0],
+                "rotation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "color": [0.0, 0.0, 1.0],
+                "radius": 0.15
+            },
+            "V4": {
+                "type": "octant",
+                "position": [0.0, 1.0, 1.0],
+                "rotation": {
+                    "x": 3.14159,
+                    "y": 0,
+                    "z": 0
+                },
+                "color": [0.0, 0.0, 1.0],
+                "radius": 0.15
+            },
+            "V5": {
+                "type": "octant",
+                "position": [1.0, 1.0, 1.0],
+                "rotation": {
+                    "x": 3.14159,
+                    "y": 0,
+                    "z": -1.57079
+                },
+                "color": [0.0, 0.0, 1.0],
+                "radius": 0.15
+            },
+            "V6": {
+                "type": "octant",
+                "position": [1.0, 1.0, 0.0],
+                "rotation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 3.14159
+                },
+                "color": [0.0, 0.0, 1.0],
+                "radius": 0.15
+            },
+            "V7": {
+                "type": "octant",
+                "position": [0.0, 1.0, 0.0],
+                "rotation": {
+                    "x": 1.57079,
+                    "y": 0,
+                    "z": 0
+                },
+                "color": [0.0, 0.0, 1.0],
+                "radius": 0.15
+            },
+            "F0": {
+                "type": "half",
+                "position": [0.5, 0.5, 0.0],
+                "rotation": {
+                    "x": 1.57079,
+                    "y": 0,
+                    "z": 0
+                },
+                "color": [1.0, 1.0, 0.0],
+                "radius": 0.15
+            },
+            "F1": {
+                "type": "half",
+                "position": [1.0, 0.5, 0.5],
+                "rotation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 1.57079
+                },
+                "color": [1.0, 1.0, 0.0],
+                "radius": 0.15
+            },
+            "F2": {
+                "type": "half",
+                "position": [0.5, 0.5, 1.0],
+                "rotation": {
+                    "x": -1.57079,
+                    "y": 0,
+                    "z": 0
+                },
+                "color": [1.0, 1.0, 0.0],
+                "radius": 0.15
+            },
+            "F3": {
+                "type": "half",
+                "position": [0.0, 0.5, 0.5],
+                "rotation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": -1.57079
+                },
+                "color": [1.0, 1.0, 0.0],
+                "radius": 0.15
+            },
+            "F4": {
+                "type": "half",
+                "position": [0.5, 0.0, 0.5],
+                "rotation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "color": [1.0, 1.0, 0.0],
+                "radius": 0.15
+            },
+            "F5": {
+                "type": "half",
+                "position": [0.5, 1.0, 0.5],
+                "rotation": {
+                    "x": 3.14159,
+                    "y": 0,
+                    "z": 0
+                },
+                "color": [1.0, 1.0, 0.0],
+                "radius": 0.15
+            }
+        },
+    "connections": [
+        ["V0", "V1", "edge"],
+        ["V1", "V2", "edge"],
+        ["V2", "V3", "edge"],
+        ["V3", "V0", "edge"],
+
+        ["V0", "V2", "face-hidden"],
+        ["V1", "V3", "face-hidden"],
+
+        ["V0", "V5", "face-hidden"],
+        ["V0", "V7", "face-hidden"],
+        ["V1", "V4", "face-hidden"],
+        ["V1", "V6", "face-hidden"],
+        ["V2", "V5", "face-hidden"],
+        ["V2", "V7", "face-hidden"],
+        ["V3", "V4", "face-hidden"],
+        ["V3", "V6", "face-hidden"],
+
+        ["V4", "V6", "face-hidden"],
+        ["V5", "V7", "face-hidden"],
+
+        ["V4", "V5", "edge"],
+        ["V5", "V6", "edge"],
+        ["V6", "V7", "edge"],
+        ["V7", "V4", "edge"],
+
+        ["V0", "V4", "edge"],
+        ["V1", "V5", "edge"],
+        ["V2", "V6", "edge"],
+        ["V3", "V7", "edge"],
+
+        ["F0", "F2", "inner"],
+        ["F1", "F3", "inner"],
+        ["F4", "F5", "inner"]
+
+    ]
+}

@@ -216,6 +216,51 @@
 
             "Q4": {
                 "type": "quarter",
+                "position": [0.0, 0.5, 1.0],
+                "rotation": {
+                    "x": 3.14159,
+                    "y": 0,
+                    "z": 1.57079
+                },
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.1500
+            },
+            "Q5": {
+                "type": "quarter",
+                "position": [1.0, 0.5, 1.0],
+                "rotation": {
+                    "x": -1.57079,
+                    "y": 0,
+                    "z": 1.57079
+                },
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.1500
+            },
+            "Q6": {
+                "type": "quarter",
+                "position": [1.0, 0.5, 0.0],
+                "rotation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 1.57079
+                },
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.1500
+            },
+            "Q7": {
+                "type": "quarter",
+                "position": [0.0, 0.5, 0.0],
+                "rotation": {
+                    "x": 1.57079,
+                    "y": 0,
+                    "z": 1.57079
+                },
+                "color": [1.0, 0.0, 0.0],
+                "radius": 0.1500
+            },
+
+            "Q8": {
+                "type": "quarter",
                 "position": [0.5, 1.0, 1.0],
                 "rotation": {
                     "x": 3.14159,
@@ -225,7 +270,7 @@
                 "color": [1.0, 0.0, 0.0],
                 "radius": 0.1500
             },
-            "Q5": {
+            "Q9": {
                 "type": "quarter",
                 "position": [1.0, 1.0, 0.5],
                 "rotation": {
@@ -236,7 +281,7 @@
                 "color": [1.0, 0.0, 0.0],
                 "radius": 0.1500
             },
-            "Q6": {
+            "Q10": {
                 "type": "quarter",
                 "position": [0.5, 1.0, 0.0],
                 "rotation": {
@@ -247,7 +292,7 @@
                 "color": [1.0, 0.0, 0.0],
                 "radius": 0.1500
             },
-            "Q7": {
+            "Q11": {
                 "type": "quarter",
                 "position": [0.0, 1.0, 0.5],
                 "rotation": {
